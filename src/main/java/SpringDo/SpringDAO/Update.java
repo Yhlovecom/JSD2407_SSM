@@ -1,4 +1,4 @@
-package SpringDAO;
+package SpringDo.SpringDAO;
 
 public class Update {//创建存储对象，并上传到数据库
     private String name;

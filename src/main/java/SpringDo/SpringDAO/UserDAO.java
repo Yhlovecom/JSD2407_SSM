@@ -1,9 +1,9 @@
-package SpringDAO;
+package SpringDo.SpringDAO;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component//注解，标识为组件用于Spring调用
+@Component//注解，标识为被于Spring管理
 public class UserDAO {//Data Access Object 数据访问对象(抽象关连)
 
     //新建数据库连接
@@ -22,8 +22,29 @@ public class UserDAO {//Data Access Object 数据访问对象(抽象关连)
         return "DAO_Demo{" +
                 "url=" + url + '\'' +
                 ", username='" + username + '\'' +
-                ", password" + password + '\'' +
+                ", password=" + password + '\'' +
                 "}";
+    }
+
+    public String getUrl() {
+        return url;
+    }
+    public void setUlr(String ulr) {
+        this.url = url;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
 
