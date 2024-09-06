@@ -18,7 +18,9 @@ public class UserController {//控制器
     private IInPut input;
 
     public void findUser(String userID,
-                         String password) {
+                         String password) {//账号验证方法
+
+        System.out.println(name + "开始响应用户登录请求");
 
         input.updateUser(userID,password);//打包为对象
 
@@ -28,5 +30,9 @@ public class UserController {//控制器
         }else{
             System.out.println(name + "用户不存在，登录失败");
         }
+    }
+
+    public void enrollUser() {//注册新用户
+        System.out.println(name + "开始响应用户注册请求");
     }
 }
