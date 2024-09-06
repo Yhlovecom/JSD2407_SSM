@@ -1,5 +1,6 @@
 package springDo.SpringDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;//引用Spring框架
+import springDo.SpringDAO.dao.UserDAO;
 
 public class Demo {
     public static void main(String[] args) {

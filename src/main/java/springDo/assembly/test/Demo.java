@@ -1,6 +1,7 @@
 package springDo.assembly.test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import springDo.assembly.test.student.Student;
 
 public class Demo {//学生依赖测试类
     public static void main(String[] args)

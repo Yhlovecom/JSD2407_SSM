@@ -1,7 +1,8 @@
 package springDo.controllerDo.dao;
 
 
+import springDo.controllerDo.intput.IInPut;
+
 public interface IUserDAO {
-    public boolean findUser(String userID,
-                            String password);
+    boolean findUser(IInPut input);
 }

@@ -4,6 +4,7 @@ import springDo.controllerDo.dao.IUserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import springDo.controllerDo.intput.IInPut;
 
 @Component("userServiceImpl")
 public class UserServiceImpl implements IUserService{//IUserService的实现类
@@ -14,10 +15,9 @@ public class UserServiceImpl implements IUserService{//IUserService的实现类
     private IUserDAO userDao;
 
     //实现查找用户功能
-   public boolean findUser(String userID,
-                           String password) {
+   public boolean findUser(IInPut input) {
 
-       if (userDao.findUser(userID,password)){
+       if (userDao.findUser(input)){
            System.out.println(name + "查找用户成功");
            return true;
        }else {

@@ -1,7 +1,7 @@
 package springDo.controllerDo.service;
 
+import springDo.controllerDo.intput.IInPut;
 
 public interface IUserService {
-    public boolean findUser(String userID,
-                            String password);
+    boolean findUser(IInPut input);
 }
