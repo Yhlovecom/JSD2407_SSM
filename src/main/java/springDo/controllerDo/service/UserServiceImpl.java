@@ -14,8 +14,10 @@ public class UserServiceImpl implements IUserService{//IUserService的实现类
     private IUserDAO userDao;
 
     //实现查找用户功能
-   public boolean findUser() {
-       if (userDao.findUser()){
+   public boolean findUser(String userID,
+                           String password) {
+
+       if (userDao.findUser(userID,password)){
            System.out.println(name + "查找用户成功");
            return true;
        }else {
