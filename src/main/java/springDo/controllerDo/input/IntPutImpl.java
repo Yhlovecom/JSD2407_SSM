@@ -1,6 +1,7 @@
-package springDo.controllerDo.intput;
+package springDo.controllerDo.input;
 
 import org.springframework.stereotype.Component;
+import springDo.controllerDo.interfacePackage.input.IInPut;
 
 @Component("inPutImpl")
 public class IntPutImpl implements IInPut {//用户输入对象

@@ -1,13 +1,14 @@
 package springDo.controllerDo.service;
 
-import springDo.controllerDo.dao.IUserDAO;
+import springDo.controllerDo.interfacePackage.dao.IUserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import springDo.controllerDo.intput.IInPut;
+import springDo.controllerDo.interfacePackage.input.IInPut;
+import springDo.controllerDo.interfacePackage.service.IUserService;
 
 @Component("userServiceImpl")
-public class UserServiceImpl implements IUserService{//IUserService的实现类
+public class UserServiceImpl implements IUserService {//IUserService的实现类
     private static final String name = "userServiceImpl_findUser:";
 
     @Autowired//依赖于DAO，请求对象数据

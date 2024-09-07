@@ -1,4 +1,4 @@
-package springDo.controllerDo.intput;
+package springDo.controllerDo.interfacePackage.input;
 
 public interface IInPut {//用户输入接口
     void updateUser(String userID,

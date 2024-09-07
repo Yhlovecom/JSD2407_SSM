@@ -1,14 +1,15 @@
 package springDo.controllerDo.dao.grout;
 
 import org.springframework.stereotype.Component;
+import springDo.controllerDo.interfacePackage.dao.IGrout;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 @Component("groutImpl")
-public class GroutImpl implements IGrout{//创建数据库连接
+public class GroutImpl implements IGrout {//创建数据库连接
 
-    public Connection groutDate() {
+    public Connection groutDate() {//
         try {//创建数据库连接对象
 
             Class.forName("com.mysql.cj.jdbc.Driver");//加载驱动

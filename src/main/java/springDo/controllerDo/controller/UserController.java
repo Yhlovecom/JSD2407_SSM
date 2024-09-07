@@ -1,7 +1,7 @@
 package springDo.controllerDo.controller;
 
-import springDo.controllerDo.intput.IInPut;
-import springDo.controllerDo.service.IUserService;
+import springDo.controllerDo.interfacePackage.input.IInPut;
+import springDo.controllerDo.interfacePackage.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -30,9 +30,5 @@ public class UserController {//控制器
         }else{
             System.out.println(name + "用户不存在，登录失败");
         }
-    }
-
-    public void enrollUser() {//注册新用户
-        System.out.println(name + "开始响应用户注册请求");
     }
 }

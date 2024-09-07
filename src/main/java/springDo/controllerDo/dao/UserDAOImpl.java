@@ -3,14 +3,15 @@ package springDo.controllerDo.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import springDo.controllerDo.dao.grout.IGrout;
-import springDo.controllerDo.intput.IInPut;
+import springDo.controllerDo.interfacePackage.dao.IGrout;
+import springDo.controllerDo.interfacePackage.dao.IUserDAO;
+import springDo.controllerDo.interfacePackage.input.IInPut;
 
 import java.sql.*;
 
 @SuppressWarnings("ALL")
 @Component("userDAOImpl")
-public class UserDAOImpl implements IUserDAO{
+public class UserDAOImpl implements IUserDAO {
     @Autowired
     @Qualifier("groutImpl")
     private IGrout grout;//调用连接数据库接口
