@@ -1,6 +1,6 @@
 package springDo.controllerDo;
 
-import springDo.controllerDo.controller.UserController;
+import springDo.controllerDo.controller.UserController_findUser;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Scanner;
@@ -30,7 +30,7 @@ public class Demo {//简单的mvc架构演示
         try (AnnotationConfigApplicationContext context =
                      new AnnotationConfigApplicationContext("springDo.controllerDo")){
 
-           UserController controller = context.getBean(UserController.class);
+           UserController_findUser controller = context.getBean(UserController_findUser.class);
            controller.findUser(userID, password);//向控制器传入参数，响应用户需求
 
         }

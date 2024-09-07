@@ -8,10 +8,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 @Component("groutImpl")
 public class GroutImpl implements IGrout {//创建数据库连接
-
-    public Connection groutDate() {//
+private static final String NAME = "groutImpl:" ;
+    public Connection groutDate() {
         try {//创建数据库连接对象
-
             Class.forName("com.mysql.cj.jdbc.Driver");//加载驱动
 
             return DriverManager.getConnection(
@@ -21,6 +20,7 @@ public class GroutImpl implements IGrout {//创建数据库连接
             );//创建数据库连接对象并上传
 
         } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(NAME + "数据库连接失败");
             throw new RuntimeException(e);
         }
     }

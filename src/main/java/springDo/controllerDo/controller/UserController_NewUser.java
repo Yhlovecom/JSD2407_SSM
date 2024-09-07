@@ -7,20 +7,23 @@ import springDo.controllerDo.interfacePackage.input.IInPut;
 import springDo.controllerDo.interfacePackage.service.IUserService_NewUser;
 
 @Component
-public class NewUserController {
-    private static final String name = "UserController_findUser:";
+public class UserController_NewUser {
+    private static final String NAME = "UserController_NewUser:";
 
     @Autowired
     @Qualifier("userServiceImpl_NewUser")
     private IUserService_NewUser userService;
+
     @Autowired
     @Qualifier("inPutImpl")
     private IInPut input;
 
     public void NewUser(String userID,
                         String password) {
-        System.out.println(name + "开始响应用户注册请求");
+        System.out.println(NAME + "开始响应用户注册请求");
+
         input.updateUser(userID,password);
+
         userService.NewUser(input);
     }
 }
