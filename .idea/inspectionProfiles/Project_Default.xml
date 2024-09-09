@@ -1,13 +1,10 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-    <inspection_tool class="AutoCloseableResource" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="METHOD_MATCHER_CONFIG" value="java.util.Formatter,format,java.io.Writer,append,com.google.common.base.Preconditions,checkNotNull,org.hibernate.Session,close,java.io.PrintWriter,printf,java.io.PrintStream,printf,springDo.controllerDo.dao.grout.IGrout,groutDate" />
-    </inspection_tool>
     <inspection_tool class="MavenPackageUpdate" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="excludeList">
         <list>
-          <option value="mysql:mysql-connector-java" />
+          <option value="org.springframework:spring-context" />
         </list>
       </option>
     </inspection_tool>
@@ -15,16 +12,19 @@
       <option name="isIgnoringEnabled" value="true" />
       <option name="ignoredModules">
         <list>
-          <option value="JSD2407_SSM" />
+          <option value="DAY03_Spring" />
+          <option value="DAY03_Spring" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
-          <option value="com.google.protobuf:protobuf-java:3.11.4" />
+          <option value="org.springframework:spring-core:5.3.24" />
+          <option value="org.springframework:spring-expression:5.3.24" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="不可利用" />
           <option value="不可利用" />
         </list>
       </option>
