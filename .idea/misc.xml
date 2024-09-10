@@ -10,7 +10,14 @@
         <option value="$PROJECT_DIR$/egmybatis1/pom.xml" />
         <option value="$PROJECT_DIR$/egmybatis/pom.xml" />
         <option value="$PROJECT_DIR$/shopper/pom.xml" />
+        <option value="$PROJECT_DIR$/DAY06MyBites/pom.xml" />
+        <option value="$PROJECT_DIR$/DAY06Mybatis/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/DAY06MyBites/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
