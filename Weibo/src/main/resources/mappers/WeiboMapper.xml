@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+XML文件的名字实际上叫什么都可以，但是为了便于管理，我们应当让文件名与它
+对应的Mapper类名一致。
+例如:
+当前XML是为WeiboMapper定义的，那么这个文件名就叫:WeiboMapper.xml
+
+在<mapper>标签中的属性namespace用来指定当前xml是为哪个Mapper接口进行配置的
+这里要指定清楚，格式:包名.类名
+-->
+<mapper namespace="com.tedu.day06mybatis.mapper.WeiboMapper">
+    <!--
+        <insert>相当于是原来在WeiboMapper中使用的@Insert注解，用于告知Mybatis执行INSERT语句
+
+        <insert id="方法名">这里id用于指定是为WeiboMapper中哪个方法指定的，相当于@Insert注解
+        标注在了哪个方法上
+        例如:
+        <insert id="insert">...</insert>
+        意思等同于
+        @Insert("...")
+        int insert(Weibo weibo)
+
+        在<insert>标签中定义对应的INSERT语句，就是原来使用@Insert注解时传入的INSERT语句
+        例如:
+        <insert id="insert">
+            INSERT INTO weibo(content,created,user_id)
+            VALUES(#{content},#{created},#{userId})
+        </insert>
+        等同于:
+        @Insert("INSERT INTO weibo(content,created,user_id) VALUES(#{content},#{created},#{userId})")
+        int insert(Weibo weibo)
+    -->
+    <insert id="insert">
+        INSERT INTO weibo(content,created,user_id)
+        VALUES(#{content},#{created},#{userId})
+    </insert>
+
+<!--
+    @Delete("DELETE FROM weibo WHERE id=#{id}")
+    int deleteById(Integer id)
+-->
+    <delete id="deleteById">
+        DELETE FROM weibo WHERE id=#{id}
+    </delete>
+
+<!--
+    @Update("UPDATE weibo SET content=#{content},created=#{created},user_id=#{userId} WHERE id=#{id}")
+    int updateById(Weibo weibo)
+-->
+    <update id="updateById">
+        UPDATE weibo
+        SET content=#{content},created=#{created},user_id=#{userId}
+        WHERE id=#{id}
+    </update>
+
+<!--
+    select标签需要指定返回值类型，使用resultType来明确。
+    同样要注意，如果表中字段名与类属性名不一致时，为字段取别名来对应
+-->
+    <select id="findById" resultType="com.tedu.day06mybatis.pojo.Weibo">
+        SELECT id,content,created,user_id userId
+        FROM weibo
+        WHERE id=#{id}
+    </select>
+
+    <select id="findAll" resultType="com.tedu.day06mybatis.pojo.Weibo">
+        SELECT id,content,created,user_id userId
+        FROM weibo
+    </select>
+
+    <select id="selectContent" resultType="com.tedu.day06mybatis.pojo.WeiboVO1">
+        SELECT content,created
+        FROM weibo
+        WHERE id=#{id}
+    </select>
+
+    <update id="dynamicUpdate">
+        UPDATE weibo
+        <set>
+            <if test="content!=null">content=#{content},</if>
+            <if test="created!=null">created=#{created},</if>
+            <if test="userId!=null">user_id=#{userId}</if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+<!--
+使用sql标签可以单独定义一段SQL语句，用于让其他标签重用SQL使用
+<sql id="为该SQL片段取名">  这里的id不是用于绑定到Mapper对应的方法名上，单纯的取一个名字
+便于其他标签重用这段SQL使用
+-->
+    <sql id="deleteSQL">
+        DELETE FROM weibo
+        WHERE id IN
+    </sql>
+
+
+<!--
+    foreach可以遍历方法参数内容，collection用于指定参数的类型,item用于定义从数组获取的每个元素
+    separator用于在每个元素间拼接的分隔符
+ -->
+    <delete id="deleteByIds">
+        <!--include标签可以引用某个<sql>标签中配置的SQL代码片段，用于重用SQL-->
+        <include refid="deleteSQL" />(
+            <foreach collection="array" item="e" separator=",">
+                #{e}
+            </foreach>
+        )
+    </delete>
+<!--
+    如果参数是一个List集合，那么foreach中的collection指定的值就是"list"
+-->
+    <delete id="deleteByIds2">
+        <include refid="deleteSQL" />(
+        <foreach collection="list" item="e" separator=",">
+            #{e}
+        </foreach>
+        )
+    </delete>
+
+<!--    结果集映射-->
+    <resultMap id="resultMap" type="com.tedu.day06mybatis.pojo.WeiboVO2">
+        <id column="id" property="id" />
+        <result column="content" property="content" />
+        <result column="user_id" property="userId" />
+    </resultMap>
+
+    <select id="selectResultMap" resultMap="resultMap">
+        SELECT id,content,user_id-- 对应视图WeiboVO2
+        FROM weibo
+        WHERE id=#{id}
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
