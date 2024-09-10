@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.tedu.shopper.pojo.Merchandise;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootTest
 class ShopperApplicationTests {
     @Autowired//自动注入接口ShoppMapper
@@ -28,4 +31,14 @@ class ShopperApplicationTests {
         shopperMapper.insertShopper(merchandise);
     }
 
+    @Test
+    void testDeletesShopperById() {//测试批量删除功能
+        //1.创建要删除的id集合
+        List<Integer> ids = new ArrayList<>();
+        for (int i = 1; i <= 10; i++){
+            ids.add(i);
+        }
+        //2.调用接口ShopperMapper的方法，完成批量删除操作
+        shopperMapper.deletesShopper(ids);
+    }
 }

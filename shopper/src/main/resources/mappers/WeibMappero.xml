@@ -20,4 +20,15 @@
         </set>
         WHERE id=#{id}
     </update>
+<!--
+    遍历集合的批量操作
+    -->
+    <delete id="deletesShopper">
+        DELETE FROM Shopper
+        WHERE id IN
+        <foreach collection="list" item="ids" separator="," open="(" close=")">
+            #{ids}
+        </foreach>
+    </delete>
+
 </mapper>
