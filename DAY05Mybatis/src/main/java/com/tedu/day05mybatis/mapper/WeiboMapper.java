@@ -15,10 +15,14 @@ public interface WeiboMapper {
         那么这个对象就不存在因为其他字段没有查询，对应属性为NULL的情况了。
      */
     int insert(Weibo weibo);
-    int deleteById(int id);//依照Id删除微博
+    int deleteById(List<Integer> ids);//依照weiboId删除微博
     int updateById(Weibo weibo);//修改微博
-    Weibo findById(int id);
+    Weibo findById(int id);//依据weiboId查询微博
     List<Weibo> findAll();
+
+    //动态SQL
+    int dynamicUpdate (Weibo weibo);
+
     @Select("SELECT content,created FROM weibo WHERE id=#{id}")
 //    Weibo selectContent(int id);
     WeiboVO1 selectContent(int id);

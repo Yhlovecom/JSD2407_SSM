@@ -1,4 +1,4 @@
-package com.tedu.day05mybatis.pojo;
+package com.tedu.egmybatis.pojo;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 

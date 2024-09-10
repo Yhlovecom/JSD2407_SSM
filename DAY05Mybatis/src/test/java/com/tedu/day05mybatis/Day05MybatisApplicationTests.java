@@ -1,13 +1,12 @@
 package com.tedu.day05mybatis;
 
 import com.tedu.day05mybatis.mapper.WeiboMapper;
-import com.tedu.day05mybatis.pojo.Weibo;
-import com.tedu.day05mybatis.pojo.WeiboVO1;
+import com.tedu.day05mybatis.pojo.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.Date;
+import java.util.List;
 
 @SpringBootTest
 class Day05MybatisApplicationTests {
@@ -32,7 +31,8 @@ class Day05MybatisApplicationTests {
 
     @Test
     void testDeleteWeiboById() {
-        int num = weiboMapper.deleteById(4);
+        List<Integer>ids = List.of(1,2);
+        int num = weiboMapper.deleteById(ids);
         System.out.println(num>0 ? "删除" + num + "条数据成功":"删除失败");
     }
 
@@ -61,5 +61,16 @@ class Day05MybatisApplicationTests {
     @Test
     void selectCount() {
 
+    }
+
+    @Test
+    void dynamicUpdate() {
+        Weibo weibo = new Weibo();
+        weibo.setId(2);
+        weibo.setContent("测试数据");
+        weibo.setCreated(new Date());
+        weibo.setUserId(1);
+        int num = weiboMapper.dynamicUpdate(weibo);
+        System.out.println(num>0 ? "修改" + num + "条数据成功":"修改失败");
     }
 }

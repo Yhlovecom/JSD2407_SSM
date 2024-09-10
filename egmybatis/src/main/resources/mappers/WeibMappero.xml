@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tedu.egmybatis.mapper.CommentMapper">
+
+    <insert id="insertComment">-- 插入评论
+    INSERT INTO comment(content,created,user_id,weibo_id)"
+    "VALUES(#{content},#{created},#{userId},#{weiboId})
+    </insert>
+
+    <delete id="deleteComment">-- 删除评论
+    DELETE FROM comment
+    WHERE id=#{id}
+    </delete>
+
+    <update id="updateComment">-- 更新评论
+    UPDATE comment SET content=#{content},created=#{created},user_id=#{userId},weibo_id=#{weiboId}
+    WHERE id=#{id}
+    </update>
+
+    <select id="selectCommentById" resultType="com.tedu.egmybatis.pojo.CommentVO1">-- 显示微博内容下评论
+    SELECT content,user_id userId
+    FROM comment
+    WHERE id=#{id}
+    </select>
+
+    <select id="selectCommentByUserId" resultType="com.tedu.egmybatis.pojo.CommentVO2">-- 显示用户的所有评论
+    SELECT id,created,user_id userId
+    FROM comment
+    WHERE user_id=#{id}
+    </select>
+
+</mapper>

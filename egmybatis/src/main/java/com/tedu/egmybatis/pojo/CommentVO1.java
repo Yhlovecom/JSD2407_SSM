@@ -1,4 +1,4 @@
-package com.tedu.day05mybatis.pojo;
+package com.tedu.egmybatis.pojo;
 
 public class CommentVO1 {//评论视图对象（将评论内容与评论的用户对应）
     private String content;//评论内容

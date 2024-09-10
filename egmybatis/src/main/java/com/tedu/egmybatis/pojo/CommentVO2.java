@@ -1,4 +1,4 @@
-package com.tedu.day05mybatis.pojo;
+package com.tedu.egmybatis.pojo;
 
 public class CommentVO2 {//依据给定的用户id信息显示
     private Integer id;//用户id

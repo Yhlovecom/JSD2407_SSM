@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tedu.shopper.mapper.ShopperMapper">
+<!--    向数据库Shopper表中插入商品-->
+    <insert id="insertShopper" parameterType="com.tedu.shopper.pojo.Merchandise">
+        INSERT INTO Shopper(name,num,price,type)
+        VALUES(#{name},#{num},#{price},#{type})
+    </insert>
+
+<!--    更新商品信息-->
+    <update id="updateShopper" parameterType="com.tedu.shopper.pojo.Merchandise">
+        UPDATE Shopper
+        <set>
+            <if test="name!=null">name=#{name},</if>
+            <if test="num!=null">num=#{num},</if>
+            <if test="price!=null">price=#{price},</if>
+            <if test="type!=null">type=#{type}</if>
+        </set>
+        WHERE id=#{id}
+    </update>
+</mapper>

@@ -38,8 +38,8 @@ class Day04MyBatisApplicationTests {
         user.setCreated(new Date());
         user.setAge(22);
 
-//        MyMapper mapper = new MyMapper();
-//        int num = mapper.insert(user);
+//        MyMapper mappers = new MyMapper();
+//        int num = mappers.insert(user);
 
         int num = userMapper.insert(user);
         System.out.println(num>0?"保存成功":"保存失败");
