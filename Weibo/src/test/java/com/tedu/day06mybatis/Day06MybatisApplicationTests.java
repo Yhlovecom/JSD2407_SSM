@@ -1,5 +1,6 @@
 package com.tedu.day06mybatis;
 
+import com.tedu.day06mybatis.mapper.UserMapper;
 import com.tedu.day06mybatis.mapper.WeiboMapper;
 import com.tedu.day06mybatis.pojo.Weibo;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,8 @@ import java.util.List;
 class Day06MybatisApplicationTests {
     @Autowired
     private WeiboMapper weiboMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     @Test
     void testInsertWeibo(){

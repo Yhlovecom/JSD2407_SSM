@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tedu.day07springmvc.mapper.UserMapper">
+
+    <insert id="insertUser"><!--向数据库表中插入新的用户数据-->
+        INSERT
+        INTO user(username,password,nickname,age,created)
+        VALUES (#{username},#{password},#{nickname},#{age},#{created})
+    </insert>
+
+    <delete id="deleteUser"><!--删除用户数据-->
+        DELETE
+        FROM user
+        WHERE id=#{id}
+    </delete>
+
+    <delete id="deleteUserByIds"><!--批量删除用户数据-->
+        DELETE
+        FROM user
+        WHERE id IN
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="updateUserById"><!--更新用户数据-->
+        UPDATE user
+        <set>
+            <if test="username!=null">username=#{username},</if>
+            <if test="password!=null">password=#{password},</if>
+            <if test="nickname!=null">nickname=#{nickname},</if>
+            <if test="age!=null">age=#{age},</if>
+        </set>
+        WHERE id=#{user.getId()}
+    </update>
+
+    <!--展示用户信息-->
+</mapper>

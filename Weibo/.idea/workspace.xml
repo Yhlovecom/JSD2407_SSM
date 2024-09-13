@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c83d9ee2-a93b-4f06-afa8-33fc74700282" name="更改" comment="测试">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tedu/day06mybatis/pojo/WeiboVO2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tedu/day06mybatis/mapper/WeiboMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tedu/day06mybatis/mapper/WeiboMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/WeiboMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/WeiboMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/java/com/tedu/mvc/MvcApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/java/com/tedu/mvc/demos/web/Controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/java/com/tedu/mvc/demos/web/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/java/com/tedu/mvc/demos/web/pojo/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/java/com/tedu/mvc/demos/web/pojo/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/resources/mappers/UserMapper.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/main/resources/static/image/lass.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC/src/test/java/com/tedu/mvc/MvcApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tedu/day06mybatis/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tedu/day06mybatis/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tedu/day06mybatis/pojo/WeiboVO3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tedu/day06mybatis/Day06MybatisApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tedu/day06mybatis/Day06MybatisApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +36,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -24,9 +44,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2lrWccWhtj8121T7HJslPwOxDUc" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,7 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/program/java/gitProjects/GitHub/JSD2407_SSM",
+    "last_opened_file_path": "E:/program/java/gitProjects/MyWeibo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +71,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\program\java\gitProjects\GitHub\JSD2407_SSM\Weibo\src\main\resources\mappers" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,6 +92,8 @@
       <option name="presentableId" value="Default" />
       <updated>1725938755437</updated>
       <workItem from="1725938756484" duration="2171000" />
+      <workItem from="1725948635319" duration="6326000" />
+      <workItem from="1726116145215" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <option name="closed" value="true" />

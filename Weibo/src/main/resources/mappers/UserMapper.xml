@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tedu.day06mybatis.mapper.UserMapper">
+    
+    <resultMap id="userWeibo" type="com.tedu.day06mybatis.pojo.User">--  定义一个resultMap, 用于映射User对象和User表。
+        <id column="uid" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="nickname" property="nickname" />
+        <result column="age" property="age" />
+        <result column="ucreated" property="created" />
+            <collection property="weiboList" ofType="com.tedu.day06mybatis.pojo.Weibo">
+            <id column="wid" property="id" />
+            <result column="content" property="content" />
+            <result column="wcreated" property="created" />
+            <result column="user_id" property="userId" />
+            </collection>
+    </resultMap>
+    <select id="selectUserAndWeiboById" resultMap="userWeibo">--  联表查询，通过用户表的Id获取用户信息，以及用户的微博信息（一个用户信息查询出一个微博对象集合）
+        SELECT u.id uid,u.username,u.password,u.nickname,u.age,u.created ucreated,
+               w.id wid,w.content,w.created wcreated,w.user_id
+        FROM user u
+        LEFT JOIN weibo w ON u.id=w.user_id
+        WHERE u.id=#{id}
+    </select>
+
+    <resultMap id="userComment" type="om.tedu.day06mybatis.pojo.User">-- 使用resultMap映射WeiboOV3对象和User表,映射名为userComment
+        <id column="uid" property="id" />
+        <result column="username" property="username" />
+            <collection property="commentList" ofType="com.tedu.day06mybatis.pojo.Comment">-- 为表comment与comment对象创建映射关系，并根据联表查询的结果创建comment对象集合
+            <id column="cid" property="id" />
+            <result column="content" property="content" />
+            <result column="created" property="created" />
+            <result column="user_id" property="userId" />
+            </collection>
+    </resultMap>
+    <select id="selectUserAndWeiboById2">
+        SELECT u.id uid,u.name,
+               c.id cid,c.contene,c.created,
+        FROM user u
+        LEFT JOIN comment c ON u.id=c.user_id
+        WHERE u.id=#{id}
+    </select>
+</mapper>
+
+
+
+
+
+
+

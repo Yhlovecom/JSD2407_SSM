@@ -13,12 +13,15 @@
         <option value="$PROJECT_DIR$/DAY06MyBites/pom.xml" />
         <option value="$PROJECT_DIR$/DAY06Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/Weibo/pom.xml" />
+        <option value="$PROJECT_DIR$/DAY06SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/MVC/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/DAY05Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/DAY06MyBites/pom.xml" />
+        <option value="$PROJECT_DIR$/DAY06SpringMVC/pom.xml" />
         <option value="$PROJECT_DIR$/egmybatis/pom.xml" />
         <option value="$PROJECT_DIR$/egmybatis1/pom.xml" />
       </set>
